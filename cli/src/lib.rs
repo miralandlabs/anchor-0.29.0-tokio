@@ -11,6 +11,8 @@ use anchor_syn::idl::types::{
     IdlTypeDefinitionTy,
 };
 use anyhow::{anyhow, Context, Result};
+use base64::engine::general_purpose::STANDARD;
+use base64::Engine;
 use clap::Parser;
 use config::ToolchainConfig;
 use dirs::home_dir;
@@ -2684,7 +2686,7 @@ fn print_idl_instruction(ix_name: &str, ix: &Instruction, idl_address: &Pubkey) 
 
     println!(
         "Base64 encoded instruction: {}",
-        base64::encode(serialized_ix)
+        STANDARD.encode(serialized_ix)
     );
 
     Ok(())

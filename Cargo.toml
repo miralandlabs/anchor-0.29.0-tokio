@@ -5,6 +5,7 @@ lto = true
 codegen-units = 1
 
 [workspace]
+resolver = "2"
 members = [
     "avm",
     "cli",
@@ -15,7 +16,4 @@ members = [
     "lang/syn",
     "spl",
 ]
-exclude = [
-    "tests/swap/deps/openbook-dex",
-    "tests/cfo/deps/openbook-dex",
-]
+exclude = ["tests/swap/deps/openbook-dex", "tests/cfo/deps/openbook-dex"]
